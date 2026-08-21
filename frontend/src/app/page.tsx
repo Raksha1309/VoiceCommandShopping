@@ -12,7 +12,8 @@ export default function Home() {
   const [recommendations, setRecommendations] = useState({ history: [], seasonal: [] });
   const [systemMessage, setSystemMessage] = useState("");
 
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+  // Since both frontend and backend are on Vercel, we can just use a relative path!
+  const API_URL = "/api";
 
   const fetchList = async () => {
     const timeoutId = setTimeout(() => {
