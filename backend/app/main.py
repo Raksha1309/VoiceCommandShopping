@@ -3,10 +3,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, Base
 from .routes import voice, shopping, search, recommendations
 
-# Create database tables
-Base.metadata.create_all(bind=engine)
+from contextlib import asynccontextmanager
 
-app = FastAPI(title="Voice Command Shopping Assistant")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Create database tables on startup
+    Base.metadata.create_all(bind=engine)
+    yield
+
+app = FastAPI(title="Voice Command Shopping Assistant", lifespan=lifespan)
 
 # CORS setup for frontend
 app.add_middleware(
