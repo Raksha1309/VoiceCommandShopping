@@ -1,0 +1,18 @@
+[
+  {
+    "season": "Autumn",
+    "products": ["Apples", "Pumpkin", "Sweet Corn"]
+  },
+  {
+    "season": "Summer",
+    "products": ["Watermelon", "Mangoes", "Ice Cream"]
+  },
+  {
+    "season": "Winter",
+    "products": ["Hot Chocolate", "Oranges", "Carrots"]
+  },
+  {
+    "season": "Spring",
+    "products": ["Strawberries", "Asparagus", "Peas"]
+  }
+]

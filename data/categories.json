@@ -1,0 +1,9 @@
+[
+  { "name": "Dairy", "icon": "🥛" },
+  { "name": "Dairy Alternatives", "icon": "🌿" },
+  { "name": "Produce", "icon": "🍎" },
+  { "name": "Bakery", "icon": "🍞" },
+  { "name": "Personal Care", "icon": "🪥" },
+  { "name": "Snacks", "icon": "🥨" },
+  { "name": "Household", "icon": "🧼" }
+]

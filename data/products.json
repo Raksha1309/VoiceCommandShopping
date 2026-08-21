@@ -1,0 +1,1502 @@
+[
+  {
+    "id": 1,
+    "name": "Onion",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "onion",
+      "onion"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Potato",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "potato",
+      "potato"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Tomato",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "tomato",
+      "tomato"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Garlic",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "garlic",
+      "garlic"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Ginger",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "ginger",
+      "ginger"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Green Chilli",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "green chilli",
+      "chilli"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Lemon",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "lemon",
+      "lemon"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Coriander Leaves",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "coriander leaves",
+      "leaves"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Mint Leaves",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "mint leaves",
+      "leaves"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Cucumber",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "cucumber",
+      "cucumber"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Carrot",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "carrot",
+      "carrot"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Capsicum",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "capsicum",
+      "capsicum"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Cauliflower",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "cauliflower",
+      "cauliflower"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Cabbage",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "cabbage",
+      "cabbage"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Spinach",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "spinach",
+      "spinach"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Apple",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 120.0,
+    "available": true,
+    "aliases": [
+      "apple",
+      "apple"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Banana",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "banana",
+      "banana"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Papaya",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "papaya",
+      "papaya"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Pomegranate",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "pomegranate",
+      "pomegranate"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Watermelon",
+    "category": "Vegetables & Fruits",
+    "brand": "Generic",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "watermelon",
+      "watermelon"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Amul Taaza Milk",
+    "category": "Dairy & Breakfast",
+    "brand": "Amul",
+    "price": 30.0,
+    "available": true,
+    "aliases": [
+      "amul taaza milk",
+      "milk"
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Amul Gold Milk",
+    "category": "Dairy & Breakfast",
+    "brand": "Amul",
+    "price": 30.0,
+    "available": true,
+    "aliases": [
+      "amul gold milk",
+      "milk"
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Mother Dairy Milk",
+    "category": "Dairy & Breakfast",
+    "brand": "Mother",
+    "price": 30.0,
+    "available": true,
+    "aliases": [
+      "mother dairy milk",
+      "milk"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Nandini Milk",
+    "category": "Dairy & Breakfast",
+    "brand": "Nandini",
+    "price": 30.0,
+    "available": true,
+    "aliases": [
+      "nandini milk",
+      "milk"
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Amul Butter",
+    "category": "Dairy & Breakfast",
+    "brand": "Amul",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "amul butter",
+      "butter"
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Amul Cheese Slices",
+    "category": "Dairy & Breakfast",
+    "brand": "Amul",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "amul cheese slices",
+      "slices"
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Paneer",
+    "category": "Dairy & Breakfast",
+    "brand": "Paneer",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "paneer",
+      "paneer"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Curd",
+    "category": "Dairy & Breakfast",
+    "brand": "Curd",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "curd",
+      "curd"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Eggs (6 pack)",
+    "category": "Dairy & Breakfast",
+    "brand": "Eggs",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "eggs (6 pack)",
+      "pack)"
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Britannia Brown Bread",
+    "category": "Dairy & Breakfast",
+    "brand": "Britannia",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "britannia brown bread",
+      "bread"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Harvest White Bread",
+    "category": "Dairy & Breakfast",
+    "brand": "Harvest",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "harvest white bread",
+      "bread"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Oats",
+    "category": "Dairy & Breakfast",
+    "brand": "Oats",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "oats",
+      "oats"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Corn Flakes",
+    "category": "Dairy & Breakfast",
+    "brand": "Corn",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "corn flakes",
+      "flakes"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Muesli",
+    "category": "Dairy & Breakfast",
+    "brand": "Muesli",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "muesli",
+      "muesli"
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Lay's Classic Salted",
+    "category": "Munchies",
+    "brand": "Lay's",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "lay's classic salted",
+      "salted"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Lay's Magic Masala",
+    "category": "Munchies",
+    "brand": "Lay's",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "lay's magic masala",
+      "masala"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Kurkure",
+    "category": "Munchies",
+    "brand": "Kurkure",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "kurkure",
+      "kurkure"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Bingo Mad Angles",
+    "category": "Munchies",
+    "brand": "Bingo",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "bingo mad angles",
+      "angles"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Haldiram's Bhujia",
+    "category": "Munchies",
+    "brand": "Haldiram's",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "haldiram's bhujia",
+      "bhujia"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Haldiram's Moong Dal",
+    "category": "Munchies",
+    "brand": "Haldiram's",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "haldiram's moong dal",
+      "dal"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Doritos",
+    "category": "Munchies",
+    "brand": "Doritos",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "doritos",
+      "doritos"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Pringles",
+    "category": "Munchies",
+    "brand": "Pringles",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "pringles",
+      "pringles"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Popcorn",
+    "category": "Munchies",
+    "brand": "Popcorn",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "popcorn",
+      "popcorn"
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Roasted Peanuts",
+    "category": "Munchies",
+    "brand": "Roasted",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "roasted peanuts",
+      "peanuts"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Coca Cola",
+    "category": "Cold Drinks & Juices",
+    "brand": "Coca",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "coca cola",
+      "cola"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Pepsi",
+    "category": "Cold Drinks & Juices",
+    "brand": "Pepsi",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "pepsi",
+      "pepsi"
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Sprite",
+    "category": "Cold Drinks & Juices",
+    "brand": "Sprite",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "sprite",
+      "sprite"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Thums Up",
+    "category": "Cold Drinks & Juices",
+    "brand": "Thums",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "thums up",
+      "up"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Fanta",
+    "category": "Cold Drinks & Juices",
+    "brand": "Fanta",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "fanta",
+      "fanta"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Maaza",
+    "category": "Cold Drinks & Juices",
+    "brand": "Maaza",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "maaza",
+      "maaza"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Slice",
+    "category": "Cold Drinks & Juices",
+    "brand": "Slice",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "slice",
+      "slice"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Tropicana Mixed Fruit",
+    "category": "Cold Drinks & Juices",
+    "brand": "Tropicana",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "tropicana mixed fruit",
+      "fruit"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Real Orange Juice",
+    "category": "Cold Drinks & Juices",
+    "brand": "Real",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "real orange juice",
+      "juice"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Red Bull",
+    "category": "Cold Drinks & Juices",
+    "brand": "Red",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "red bull",
+      "bull"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Monster Energy",
+    "category": "Cold Drinks & Juices",
+    "brand": "Monster",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "monster energy",
+      "energy"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Maggi 2-Minute Noodles",
+    "category": "Instant & Frozen Food",
+    "brand": "Maggi",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "maggi 2-minute noodles",
+      "noodles"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Yippee Noodles",
+    "category": "Instant & Frozen Food",
+    "brand": "Yippee",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "yippee noodles",
+      "noodles"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Top Ramen",
+    "category": "Instant & Frozen Food",
+    "brand": "Top",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "top ramen",
+      "ramen"
+    ]
+  },
+  {
+    "id": 59,
+    "name": "McCain French Fries",
+    "category": "Instant & Frozen Food",
+    "brand": "McCain",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "mccain french fries",
+      "fries"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "McCain Smiles",
+    "category": "Instant & Frozen Food",
+    "brand": "McCain",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "mccain smiles",
+      "smiles"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Saffola Oats",
+    "category": "Instant & Frozen Food",
+    "brand": "Saffola",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "saffola oats",
+      "oats"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "MTR Poha",
+    "category": "Instant & Frozen Food",
+    "brand": "MTR",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "mtr poha",
+      "poha"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Frozen Green Peas",
+    "category": "Instant & Frozen Food",
+    "brand": "Frozen",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "frozen green peas",
+      "peas"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Brooke Bond Red Label Tea",
+    "category": "Tea, Coffee & Health Drinks",
+    "brand": "Brooke",
+    "price": 150.0,
+    "available": true,
+    "aliases": [
+      "brooke bond red label tea",
+      "tea"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Tata Tea Gold",
+    "category": "Tea, Coffee & Health Drinks",
+    "brand": "Tata",
+    "price": 150.0,
+    "available": true,
+    "aliases": [
+      "tata tea gold",
+      "gold"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Taj Mahal Tea",
+    "category": "Tea, Coffee & Health Drinks",
+    "brand": "Taj",
+    "price": 150.0,
+    "available": true,
+    "aliases": [
+      "taj mahal tea",
+      "tea"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Nescafe Classic Coffee",
+    "category": "Tea, Coffee & Health Drinks",
+    "brand": "Nescafe",
+    "price": 150.0,
+    "available": true,
+    "aliases": [
+      "nescafe classic coffee",
+      "coffee"
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Bru Gold Coffee",
+    "category": "Tea, Coffee & Health Drinks",
+    "brand": "Bru",
+    "price": 150.0,
+    "available": true,
+    "aliases": [
+      "bru gold coffee",
+      "coffee"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Bournvita",
+    "category": "Tea, Coffee & Health Drinks",
+    "brand": "Bournvita",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "bournvita",
+      "bournvita"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Horlicks",
+    "category": "Tea, Coffee & Health Drinks",
+    "brand": "Horlicks",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "horlicks",
+      "horlicks"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Complan",
+    "category": "Tea, Coffee & Health Drinks",
+    "brand": "Complan",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "complan",
+      "complan"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Parle-G",
+    "category": "Bakery & Biscuits",
+    "brand": "Parle-G",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "parle-g",
+      "parle-g"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Britannia Good Day",
+    "category": "Bakery & Biscuits",
+    "brand": "Britannia",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "britannia good day",
+      "day"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Britannia Marie Gold",
+    "category": "Bakery & Biscuits",
+    "brand": "Britannia",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "britannia marie gold",
+      "gold"
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Oreo",
+    "category": "Bakery & Biscuits",
+    "brand": "Oreo",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "oreo",
+      "oreo"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Hide & Seek",
+    "category": "Bakery & Biscuits",
+    "brand": "Hide",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "hide & seek",
+      "seek"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Dark Fantasy",
+    "category": "Bakery & Biscuits",
+    "brand": "Dark",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "dark fantasy",
+      "fantasy"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Rusk",
+    "category": "Bakery & Biscuits",
+    "brand": "Rusk",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "rusk",
+      "rusk"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Pav",
+    "category": "Bakery & Biscuits",
+    "brand": "Pav",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "pav",
+      "pav"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Burger Buns",
+    "category": "Bakery & Biscuits",
+    "brand": "Burger",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "burger buns",
+      "buns"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Aashirvaad Atta",
+    "category": "Atta, Rice & Dal",
+    "brand": "Aashirvaad",
+    "price": 200.0,
+    "available": true,
+    "aliases": [
+      "aashirvaad atta",
+      "atta"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Fortune Chakki Fresh Atta",
+    "category": "Atta, Rice & Dal",
+    "brand": "Fortune",
+    "price": 200.0,
+    "available": true,
+    "aliases": [
+      "fortune chakki fresh atta",
+      "atta"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "India Gate Basmati Rice",
+    "category": "Atta, Rice & Dal",
+    "brand": "India",
+    "price": 200.0,
+    "available": true,
+    "aliases": [
+      "india gate basmati rice",
+      "rice"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "Kohinoor Basmati Rice",
+    "category": "Atta, Rice & Dal",
+    "brand": "Kohinoor",
+    "price": 200.0,
+    "available": true,
+    "aliases": [
+      "kohinoor basmati rice",
+      "rice"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "Tata Sampann Toor Dal",
+    "category": "Atta, Rice & Dal",
+    "brand": "Tata",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "tata sampann toor dal",
+      "dal"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Moong Dal",
+    "category": "Atta, Rice & Dal",
+    "brand": "Moong",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "moong dal",
+      "dal"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Chana Dal",
+    "category": "Atta, Rice & Dal",
+    "brand": "Chana",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "chana dal",
+      "dal"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "Urad Dal",
+    "category": "Atta, Rice & Dal",
+    "brand": "Urad",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "urad dal",
+      "dal"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Almonds",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Almonds",
+    "price": 400.0,
+    "available": true,
+    "aliases": [
+      "almonds",
+      "almonds"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Cashews",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Cashews",
+    "price": 400.0,
+    "available": true,
+    "aliases": [
+      "cashews",
+      "cashews"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Raisins",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Raisins",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "raisins",
+      "raisins"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Walnuts",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Walnuts",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "walnuts",
+      "walnuts"
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Fortune Sunflower Oil",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Fortune",
+    "price": 200.0,
+    "available": true,
+    "aliases": [
+      "fortune sunflower oil",
+      "oil"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Saffola Gold Oil",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Saffola",
+    "price": 200.0,
+    "available": true,
+    "aliases": [
+      "saffola gold oil",
+      "oil"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Mustard Oil",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Mustard",
+    "price": 200.0,
+    "available": true,
+    "aliases": [
+      "mustard oil",
+      "oil"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Everest Garam Masala",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Everest",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "everest garam masala",
+      "masala"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "MDH Chana Masala",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "MDH",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "mdh chana masala",
+      "masala"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Tata Salt",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Tata",
+    "price": 40.0,
+    "available": true,
+    "aliases": [
+      "tata salt",
+      "salt"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Catch Black Pepper",
+    "category": "Dry Fruits, Masala & Oil",
+    "brand": "Catch",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "catch black pepper",
+      "pepper"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Colgate Toothpaste",
+    "category": "Personal Care",
+    "brand": "Colgate",
+    "price": 60.0,
+    "available": true,
+    "aliases": [
+      "colgate toothpaste",
+      "toothpaste"
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Pepsodent",
+    "category": "Personal Care",
+    "brand": "Pepsodent",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "pepsodent",
+      "pepsodent"
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Oral-B Toothbrush",
+    "category": "Personal Care",
+    "brand": "Oral-B",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "oral-b toothbrush",
+      "toothbrush"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Listerine Mouthwash",
+    "category": "Personal Care",
+    "brand": "Listerine",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "listerine mouthwash",
+      "mouthwash"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Dettol Soap",
+    "category": "Personal Care",
+    "brand": "Dettol",
+    "price": 60.0,
+    "available": true,
+    "aliases": [
+      "dettol soap",
+      "soap"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Dove Soap",
+    "category": "Personal Care",
+    "brand": "Dove",
+    "price": 60.0,
+    "available": true,
+    "aliases": [
+      "dove soap",
+      "soap"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Pears Soap",
+    "category": "Personal Care",
+    "brand": "Pears",
+    "price": 60.0,
+    "available": true,
+    "aliases": [
+      "pears soap",
+      "soap"
+    ]
+  },
+  {
+    "id": 107,
+    "name": "Head & Shoulders Shampoo",
+    "category": "Personal Care",
+    "brand": "Head",
+    "price": 180.0,
+    "available": true,
+    "aliases": [
+      "head & shoulders shampoo",
+      "shampoo"
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Pantene Shampoo",
+    "category": "Personal Care",
+    "brand": "Pantene",
+    "price": 180.0,
+    "available": true,
+    "aliases": [
+      "pantene shampoo",
+      "shampoo"
+    ]
+  },
+  {
+    "id": 109,
+    "name": "Gillette Mach 3",
+    "category": "Personal Care",
+    "brand": "Gillette",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "gillette mach 3",
+      "3"
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Whisper Ultra Clean Pads",
+    "category": "Personal Care",
+    "brand": "Whisper",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "whisper ultra clean pads",
+      "pads"
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Stayfree Pads",
+    "category": "Personal Care",
+    "brand": "Stayfree",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "stayfree pads",
+      "pads"
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Nivea Body Lotion",
+    "category": "Personal Care",
+    "brand": "Nivea",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "nivea body lotion",
+      "lotion"
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Vaseline",
+    "category": "Personal Care",
+    "brand": "Vaseline",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "vaseline",
+      "vaseline"
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Surf Excel Matic",
+    "category": "Cleaning Essentials",
+    "brand": "Surf",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "surf excel matic",
+      "matic"
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Ariel",
+    "category": "Cleaning Essentials",
+    "brand": "Ariel",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "ariel",
+      "ariel"
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Tide",
+    "category": "Cleaning Essentials",
+    "brand": "Tide",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "tide",
+      "tide"
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Vim Liquid",
+    "category": "Cleaning Essentials",
+    "brand": "Vim",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "vim liquid",
+      "liquid"
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Pril",
+    "category": "Cleaning Essentials",
+    "brand": "Pril",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "pril",
+      "pril"
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Domex",
+    "category": "Cleaning Essentials",
+    "brand": "Domex",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "domex",
+      "domex"
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Harpic",
+    "category": "Cleaning Essentials",
+    "brand": "Harpic",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "harpic",
+      "harpic"
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Lizol",
+    "category": "Cleaning Essentials",
+    "brand": "Lizol",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "lizol",
+      "lizol"
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Colin",
+    "category": "Cleaning Essentials",
+    "brand": "Colin",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "colin",
+      "colin"
+    ]
+  },
+  {
+    "id": 123,
+    "name": "Comfort Fabric Conditioner",
+    "category": "Cleaning Essentials",
+    "brand": "Comfort",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "comfort fabric conditioner",
+      "conditioner"
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Scotch Brite Scrub Pad",
+    "category": "Cleaning Essentials",
+    "brand": "Scotch",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "scotch brite scrub pad",
+      "pad"
+    ]
+  },
+  {
+    "id": 125,
+    "name": "Garbage Bags",
+    "category": "Cleaning Essentials",
+    "brand": "Garbage",
+    "price": 50.0,
+    "available": true,
+    "aliases": [
+      "garbage bags",
+      "bags"
+    ]
+  }
+]
