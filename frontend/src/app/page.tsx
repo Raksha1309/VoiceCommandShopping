@@ -12,8 +12,10 @@ export default function Home() {
   const [recommendations, setRecommendations] = useState({ history: [], seasonal: [] });
   const [systemMessage, setSystemMessage] = useState("");
 
-  // Since both frontend and backend are on Vercel, we can just use a relative path!
-  const API_URL = "/api";
+  // Use the production Render URL or the environment variable
+  const API_URL = process.env.NEXT_PUBLIC_API_URL 
+    ? `${process.env.NEXT_PUBLIC_API_URL}/api` 
+    : "https://voicecommandshopping.onrender.com/api";
 
   const fetchList = async () => {
     const timeoutId = setTimeout(() => {

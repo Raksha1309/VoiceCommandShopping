@@ -17,7 +17,10 @@ export default function SearchBar({ onAdd }: SearchBarProps) {
       if (query.trim().length > 1) {
         setIsSearching(true);
         try {
-          const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+          const API_URL = process.env.NEXT_PUBLIC_API_URL 
+            ? `${process.env.NEXT_PUBLIC_API_URL}/api` 
+            : "https://voicecommandshopping.onrender.com/api";
+          const res = await fetch(`${API_URL}/search?q=${encodeURIComponent(query)}`);
           const data = await res.json();
           setResults(data.results || []);
         } catch (e) {
