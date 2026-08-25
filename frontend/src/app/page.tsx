@@ -12,10 +12,7 @@ export default function Home() {
   const [recommendations, setRecommendations] = useState({ history: [], seasonal: [] });
   const [systemMessage, setSystemMessage] = useState("");
 
-  // Use the production Render URL or the environment variable
-  const API_URL = process.env.NEXT_PUBLIC_API_URL 
-    ? `${process.env.NEXT_PUBLIC_API_URL}/api` 
-    : "https://voicecommandshopping.onrender.com/api";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
   const fetchList = async () => {
     const timeoutId = setTimeout(() => {
@@ -23,7 +20,7 @@ export default function Home() {
     }, 2000);
     
     try {
-      const res = await fetch(`${API_URL}/shopping`);
+      const res = await fetch(`${API_URL}/api/shopping`);
       clearTimeout(timeoutId);
       const data = await res.json();
       setItems(data.items || {});
@@ -36,7 +33,7 @@ export default function Home() {
 
   const fetchRecommendations = async () => {
     try {
-      const res = await fetch(`${API_URL}/recommendations`);
+      const res = await fetch(`${API_URL}/api/recommendations`);
       const data = await res.json();
       setRecommendations(data);
     } catch (e) {
@@ -53,7 +50,7 @@ export default function Home() {
     setSystemMessage(`Processing: "${command}"...`);
     
     try {
-      const res = await fetch(`${API_URL}/voice/command`, {
+      const res = await fetch(`${API_URL}/api/voice/command`, {
         method: "POST",
         headers: { 
           "Content-Type": "application/json"
@@ -79,7 +76,7 @@ export default function Home() {
 
   const handleRemove = async (id: number) => {
     try {
-      await fetch(`${API_URL}/shopping/${id}`, { 
+      await fetch(`${API_URL}/api/shopping/${id}`, { 
         method: "DELETE"
       });
       fetchList();
