@@ -24,6 +24,12 @@ export default function HeroSection({ onCommand, onToggleVoice }: { onCommand?: 
               type="text" 
               placeholder="Search or say something..." 
               className="flex-1 bg-transparent border-none py-2.5 px-4 text-white placeholder:text-text-muted focus:outline-none focus:ring-0"
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' && e.currentTarget.value.trim() && onCommand) {
+                  onCommand(e.currentTarget.value);
+                  e.currentTarget.value = '';
+                }
+              }}
             />
             <button onClick={onToggleVoice} className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center text-white shadow-lg shadow-purple-500/30 hover:scale-105 transition-transform">
               <Mic className="w-5 h-5" />

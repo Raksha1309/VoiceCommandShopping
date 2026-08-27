@@ -1,6 +1,6 @@
 import { Search, Mic, Bell, Moon } from "lucide-react";
 
-export default function TopHeader({ onToggleVoice }: { onToggleVoice?: () => void }) {
+export default function TopHeader({ onToggleVoice, onSearch }: { onToggleVoice?: () => void, onSearch?: (q: string) => void }) {
   return (
     <header className="flex items-center justify-between p-6">
       <div className="flex-1 flex items-center gap-4 max-w-xl">
@@ -17,6 +17,12 @@ export default function TopHeader({ onToggleVoice }: { onToggleVoice?: () => voi
             type="text" 
             placeholder="Search for products (e.g., milk, bread, eggs...)" 
             className="w-full bg-surface-hover/50 border border-white/5 rounded-full py-2.5 pl-10 pr-12 text-sm text-white placeholder:text-text-muted focus:outline-none focus:border-purple-500/50 transition-colors"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && e.currentTarget.value.trim() && onSearch) {
+                onSearch(e.currentTarget.value);
+                e.currentTarget.value = '';
+              }
+            }}
           />
           <button onClick={onToggleVoice} className="absolute right-2 top-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-gradient-primary flex items-center justify-center text-white shadow-lg shadow-purple-500/20">
             <Mic className="w-3.5 h-3.5" />

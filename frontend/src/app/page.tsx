@@ -17,6 +17,15 @@ export default function Home() {
   const [transcript, setTranscript] = useState("");
   const recognitionRef = useRef<any>(null);
 
+  const [products, setProducts] = useState<any[]>([
+    { id: 101, name: "Amul Taaza Milk", weight: "1 L", price: 30.00, rating: 4.8, image: "🥛", isFav: false },
+    { id: 102, name: "Brown Bread", weight: "400 g", price: 40.00, rating: 4.6, image: "🍞", isFav: false },
+    { id: 103, name: "Eggs (6 pcs)", weight: "Fresh & White", price: 36.00, rating: 4.7, image: "🥚", isFav: false },
+    { id: 104, name: "Banana", weight: "1 Dozen", price: 50.00, rating: 4.5, image: "🍌", isFav: false },
+    { id: 105, name: "Aashirvaad Atta", weight: "5 kg", price: 249.00, rating: 4.9, image: "🌾", isFav: false },
+  ]);
+  const [productsTitle, setProductsTitle] = useState("Popular Products");
+
   const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
   const fetchList = async () => {
@@ -104,6 +113,22 @@ export default function Home() {
     }
   };
 
+  const searchProducts = async (query: string) => {
+    try {
+      const res = await fetch(`${API_URL}/api/search/?q=${encodeURIComponent(query)}`);
+      const data = await res.json();
+      if (data.results && data.results.length > 0) {
+        setProducts(data.results);
+        setProductsTitle(`Search Results: ${query}`);
+      } else {
+        setSystemMessage(`No products found for "${query}"`);
+      }
+    } catch (e) {
+      console.error(e);
+      setSystemMessage("Search failed");
+    }
+  };
+
   const handleCommand = async (command: string) => {
     setSystemMessage(`Processing: "${command}"...`);
     setIsListening(true);
@@ -120,8 +145,12 @@ export default function Home() {
       const data = await res.json();
       setSystemMessage(data.message);
       
-      // Refresh data
-      fetchList();
+      if (data.intent === "search" && data.item) {
+        searchProducts(data.item);
+      } else {
+        // Refresh cart data for add/remove
+        fetchList();
+      }
       
       setTimeout(() => setSystemMessage(""), 4000);
     } catch (e) {
@@ -161,12 +190,12 @@ export default function Home() {
           </div>
         )}
 
-        <TopHeader onToggleVoice={toggleListen} />
+        <TopHeader onToggleVoice={toggleListen} onSearch={searchProducts} />
         
         <div className="flex-1">
           <HeroSection onCommand={handleCommand} onToggleVoice={toggleListen} />
           <CategoryGrid onCategoryClick={(category) => handleCommand(`Show me ${category} products`)} />
-          <ProductGrid onAdd={manualAdd} />
+          <ProductGrid products={products} title={productsTitle} onAdd={manualAdd} />
           <FeaturesBanner />
         </div>
       </main>
