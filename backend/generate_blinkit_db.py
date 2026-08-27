@@ -2,64 +2,49 @@ import json
 import os
 import sys
 
-# Define categories and products similar to Blinkit
+# Define categories and products to match the new UI
 blinkit_catalog = {
-    "Vegetables & Fruits": [
+    "Fruits & Veg": [
         "Onion", "Potato", "Tomato", "Garlic", "Ginger", "Green Chilli", "Lemon",
         "Coriander Leaves", "Mint Leaves", "Cucumber", "Carrot", "Capsicum", "Cauliflower",
         "Cabbage", "Spinach", "Apple", "Banana", "Papaya", "Pomegranate", "Watermelon"
     ],
-    "Dairy & Breakfast": [
+    "Dairy": [
         "Amul Taaza Milk", "Amul Gold Milk", "Mother Dairy Milk", "Nandini Milk",
-        "Amul Butter", "Amul Cheese Slices", "Paneer", "Curd", "Eggs (6 pack)",
-        "Britannia Brown Bread", "Harvest White Bread", "Oats", "Corn Flakes", "Muesli"
+        "Amul Butter", "Amul Cheese Slices", "Paneer", "Curd", "Eggs (6 pack)"
     ],
-    "Munchies": [
+    "Snacks": [
         "Lay's Classic Salted", "Lay's Magic Masala", "Kurkure", "Bingo Mad Angles",
         "Haldiram's Bhujia", "Haldiram's Moong Dal", "Doritos", "Pringles",
-        "Popcorn", "Roasted Peanuts"
+        "Popcorn", "Roasted Peanuts", "Maggi 2-Minute Noodles", "Yippee Noodles", 
+        "McCain French Fries", "McCain Smiles"
     ],
-    "Cold Drinks & Juices": [
+    "Beverages": [
         "Coca Cola", "Pepsi", "Sprite", "Thums Up", "Fanta", "Maaza", "Slice",
-        "Tropicana Mixed Fruit", "Real Orange Juice", "Red Bull", "Monster Energy"
-    ],
-    "Instant & Frozen Food": [
-        "Maggi 2-Minute Noodles", "Yippee Noodles", "Top Ramen", "McCain French Fries",
-        "McCain Smiles", "Saffola Oats", "MTR Poha", "Frozen Green Peas"
-    ],
-    "Tea, Coffee & Health Drinks": [
+        "Tropicana Mixed Fruit", "Real Orange Juice", "Red Bull", "Monster Energy",
         "Brooke Bond Red Label Tea", "Tata Tea Gold", "Taj Mahal Tea",
         "Nescafe Classic Coffee", "Bru Gold Coffee", "Bournvita", "Horlicks", "Complan"
     ],
-    "Bakery & Biscuits": [
-        "Parle-G", "Britannia Good Day", "Britannia Marie Gold", "Oreo",
-        "Hide & Seek", "Dark Fantasy", "Rusk", "Pav", "Burger Buns"
+    "Bakery": [
+        "Britannia Brown Bread", "Harvest White Bread", "Parle-G", "Britannia Good Day", 
+        "Britannia Marie Gold", "Oreo", "Hide & Seek", "Dark Fantasy", "Rusk", "Pav", "Burger Buns"
     ],
-    "Atta, Rice & Dal": [
+    "Household": [
+        "Surf Excel Matic", "Ariel", "Tide", "Vim Liquid", "Pril",
+        "Domex", "Harpic", "Lizol", "Colin", "Comfort Fabric Conditioner",
+        "Scotch Brite Scrub Pad", "Garbage Bags", "Colgate Toothpaste", "Pepsodent", 
+        "Oral-B Toothbrush", "Listerine Mouthwash", "Dettol Soap", "Dove Soap", 
+        "Pears Soap", "Head & Shoulders Shampoo", "Pantene Shampoo", "Dettol Liquid", 
+        "Savlon Liquid", "Hand Sanitizer", "Band-Aid"
+    ],
+    "Pantry & Staples": [
         "Aashirvaad Atta", "Fortune Chakki Fresh Atta", "India Gate Basmati Rice",
-        "Kohinoor Basmati Rice", "Tata Sampann Toor Dal", "Moong Dal", "Chana Dal", "Urad Dal"
-    ],
-    "Dry Fruits, Masala & Oil": [
+        "Kohinoor Basmati Rice", "Tata Sampann Toor Dal", "Moong Dal", "Chana Dal", "Urad Dal",
         "Almonds", "Cashews", "Raisins", "Walnuts", "Fortune Sunflower Oil",
         "Saffola Gold Oil", "Mustard Oil", "Everest Garam Masala", "MDH Chana Masala",
         "Catch Turmeric Powder", "Catch Red Chilli Powder", "Catch Coriander Powder", 
         "Everest Cumin Powder", "MDH Meat Masala", "Everest Pav Bhaji Masala",
-        "Tata Salt", "Catch Black Pepper"
-    ],
-    "Personal Care": [
-        "Colgate Toothpaste", "Pepsodent", "Oral-B Toothbrush", "Listerine Mouthwash",
-        "Dettol Soap", "Dove Soap", "Pears Soap", "Head & Shoulders Shampoo",
-        "Pantene Shampoo", "Gillette Mach 3", "Whisper Ultra Clean Pads", "Stayfree Pads",
-        "Nivea Body Lotion", "Vaseline", "Veet Wax Strips", "V Wash Plus"
-    ],
-    "Pharma & Wellness": [
-        "Dettol Liquid", "Savlon Liquid", "Hand Sanitizer", "Vicks Vaporub", "Vicks Cough Drops",
-        "Band-Aid", "Eno", "Pudin Hara", "Crocin"
-    ],
-    "Cleaning Essentials": [
-        "Surf Excel Matic", "Ariel", "Tide", "Vim Liquid", "Pril",
-        "Domex", "Harpic", "Lizol", "Colin", "Comfort Fabric Conditioner",
-        "Scotch Brite Scrub Pad", "Garbage Bags"
+        "Tata Salt", "Catch Black Pepper", "Saffola Oats", "MTR Poha"
     ]
 }
 
