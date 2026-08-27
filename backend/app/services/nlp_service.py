@@ -5,7 +5,7 @@ class NLPService:
     def __init__(self):
         self.add_patterns = [r"add", r"buy", r"need", r"put", r"get", r"bring"]
         self.remove_patterns = [r"remove", r"delete", r"take off", r"drop", r"cancel"]
-        self.search_patterns = [r"find", r"search", r"look for", r"where is"]
+        self.search_patterns = [r"find", r"search", r"look for", r"where is", r"show"]
         
         self.number_mapping = {
             "a": 1, "an": 1, "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
@@ -17,7 +17,8 @@ class NLPService:
             "of", "to", "my", "list", "from", "the", "can", "could", "you", 
             "please", "i", "want", "would", "like", "for", "me", "cart", "basket",
             "bottles", "bottle", "packets", "packet", "kg", "grams", "liters", "liter",
-            "pieces", "piece", "boxes", "box", "packs", "pack", "bunch", "gallons", "gallon"
+            "pieces", "piece", "boxes", "box", "packs", "pack", "bunch", "gallons", "gallon",
+            "products", "product", "show"
         }
 
     def parse_command(self, command: str) -> dict:
