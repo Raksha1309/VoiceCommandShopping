@@ -18,11 +18,11 @@ export default function SearchBar({ onAdd }: SearchBarProps) {
         setIsSearching(true);
         try {
           const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
-          const res = await fetch(`${API_URL}/api/search?q=${encodeURIComponent(query)}`);
+          const res = await fetch(`${API_URL}/api/search/?q=${encodeURIComponent(query)}`);
           const data = await res.json();
           setResults(data.results || []);
         } catch (e) {
-          console.error("Failed to search products");
+          console.error("Failed to search products", e);
         } finally {
           setIsSearching(false);
         }
