@@ -72,7 +72,7 @@ export default function SearchBar({ onAdd }: SearchBarProps) {
               >
                 <div>
                   <div className="text-slate-200 font-medium capitalize">{product.name}</div>
-                  <div className="text-xs text-slate-400">{product.category} • ${product.price?.toFixed(2)}</div>
+                  <div className="text-xs text-slate-400">{product.category} • ₹{product.price?.toFixed(2)}</div>
                 </div>
                 <button className="bg-indigo-500/20 text-indigo-300 p-1.5 rounded-full hover:bg-indigo-500/40 transition-colors">
                   <Plus className="w-4 h-4" />
