@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Sidebar from "@/components/Sidebar";
 import TopHeader from "@/components/TopHeader";
 import HeroSection from "@/components/HeroSection";
@@ -12,7 +12,10 @@ import FeaturesBanner from "@/components/FeaturesBanner";
 export default function Home() {
   const [items, setItems] = useState<any[]>([]);
   const [systemMessage, setSystemMessage] = useState("");
-  const [isListening, setIsListening] = useState(false); // We'll toggle this when handleCommand starts/stops
+  const [isListening, setIsListening] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [transcript, setTranscript] = useState("");
+  const recognitionRef = useRef<any>(null);
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
@@ -48,7 +51,58 @@ export default function Home() {
 
   useEffect(() => {
     fetchList();
+
+    // Initialize Speech Recognition
+    if (typeof window !== "undefined") {
+      const SpeechRecognition =
+        (window as any).SpeechRecognition ||
+        (window as any).webkitSpeechRecognition;
+
+      if (SpeechRecognition) {
+        recognitionRef.current = new SpeechRecognition();
+        recognitionRef.current.continuous = false;
+        recognitionRef.current.interimResults = false;
+
+        recognitionRef.current.onstart = () => {
+          setIsListening(true);
+          setTranscript("");
+        };
+
+        recognitionRef.current.onresult = (event: any) => {
+          const current = event.resultIndex;
+          const transcriptResult = event.results[current][0].transcript;
+          setTranscript(transcriptResult);
+          
+          setIsProcessing(true);
+          handleCommand(transcriptResult);
+        };
+
+        recognitionRef.current.onerror = (event: any) => {
+          console.error("Speech recognition error", event.error);
+          setIsListening(false);
+          setSystemMessage("Microphone error. Please try again.");
+          setTimeout(() => setSystemMessage(""), 3000);
+        };
+
+        recognitionRef.current.onend = () => {
+          setIsListening(false);
+        };
+      }
+    }
   }, []);
+
+  const toggleListen = () => {
+    if (!recognitionRef.current) {
+      alert("Your browser does not support Speech Recognition.");
+      return;
+    }
+    
+    if (isListening) {
+      recognitionRef.current.stop();
+    } else {
+      recognitionRef.current.start();
+    }
+  };
 
   const handleCommand = async (command: string) => {
     setSystemMessage(`Processing: "${command}"...`);
@@ -107,10 +161,10 @@ export default function Home() {
           </div>
         )}
 
-        <TopHeader />
+        <TopHeader onToggleVoice={toggleListen} />
         
         <div className="flex-1">
-          <HeroSection onCommand={handleCommand} />
+          <HeroSection onCommand={handleCommand} onToggleVoice={toggleListen} />
           <CategoryGrid />
           <ProductGrid onAdd={manualAdd} />
           <FeaturesBanner />
@@ -123,6 +177,7 @@ export default function Home() {
         onRemove={handleRemove} 
         onCheckout={() => setSystemMessage("Checkout coming soon!")}
         isListening={isListening}
+        onToggleVoice={toggleListen}
       />
     </div>
   );

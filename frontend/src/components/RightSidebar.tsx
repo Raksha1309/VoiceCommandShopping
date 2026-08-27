@@ -13,12 +13,14 @@ export default function RightSidebar({
   items, 
   onRemove,
   onCheckout,
-  isListening
+  isListening,
+  onToggleVoice
 }: { 
   items: CartItem[], 
   onRemove: (id: number) => void,
   onCheckout: () => void,
-  isListening: boolean
+  isListening: boolean,
+  onToggleVoice: () => void
 }) {
   
   const total = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
@@ -107,7 +109,7 @@ export default function RightSidebar({
             </div>
           )}
           
-          <button className={`w-16 h-16 rounded-full flex items-center justify-center relative z-20 transition-transform ${isListening ? 'bg-gradient-primary scale-110 shadow-lg shadow-purple-500/50 animate-pulse-ring' : 'bg-surface-hover border border-purple-500/50 hover:bg-white/10 hover:border-purple-400 text-purple-400 hover:text-purple-300'}`}>
+          <button onClick={onToggleVoice} className={`w-16 h-16 rounded-full flex items-center justify-center relative z-20 transition-transform ${isListening ? 'bg-gradient-primary scale-110 shadow-lg shadow-purple-500/50 animate-pulse-ring' : 'bg-surface-hover border border-purple-500/50 hover:bg-white/10 hover:border-purple-400 text-purple-400 hover:text-purple-300'}`}>
             <Mic className={`w-6 h-6 ${isListening ? 'text-white' : ''}`} />
           </button>
           

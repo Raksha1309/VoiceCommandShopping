@@ -1,6 +1,6 @@
 import { Search, Mic } from "lucide-react";
 
-export default function HeroSection({ onCommand }: { onCommand?: (cmd: string) => void }) {
+export default function HeroSection({ onCommand, onToggleVoice }: { onCommand?: (cmd: string) => void, onToggleVoice?: () => void }) {
   const suggestions = [
     { text: "Add milk", icon: <Mic className="w-3.5 h-3.5 text-purple-400" /> },
     { text: "Show my cart", icon: <Mic className="w-3.5 h-3.5 text-purple-400" /> },
@@ -25,7 +25,7 @@ export default function HeroSection({ onCommand }: { onCommand?: (cmd: string) =
               placeholder="Search or say something..." 
               className="flex-1 bg-transparent border-none py-2.5 px-4 text-white placeholder:text-text-muted focus:outline-none focus:ring-0"
             />
-            <button className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center text-white shadow-lg shadow-purple-500/30 hover:scale-105 transition-transform">
+            <button onClick={onToggleVoice} className="w-10 h-10 rounded-full bg-gradient-primary flex items-center justify-center text-white shadow-lg shadow-purple-500/30 hover:scale-105 transition-transform">
               <Mic className="w-5 h-5" />
             </button>
           </div>
