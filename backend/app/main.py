@@ -16,8 +16,7 @@ app = FastAPI(title="Voice Command Shopping Assistant", lifespan=lifespan)
 # CORS setup for frontend
 origins = [
     "http://localhost:3000",
-    "https://voicecommandshopping.vercel.app",
-    "https://voice-command-shopping-3knwgs38m-raksha-s-projects-95ea380f.vercel.app"
+    "https://voice-command-shopping-eight.vercel.app"
 ]
 
 app.add_middleware(

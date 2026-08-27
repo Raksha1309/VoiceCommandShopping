@@ -20,7 +20,7 @@ export default function Home() {
     }, 2000);
     
     try {
-      const res = await fetch(`${API_URL}/api/shopping`);
+      const res = await fetch(`${API_URL}/api/shopping/`);
       clearTimeout(timeoutId);
       const data = await res.json();
       setItems(data.items || {});
@@ -33,7 +33,7 @@ export default function Home() {
 
   const fetchRecommendations = async () => {
     try {
-      const res = await fetch(`${API_URL}/api/recommendations`);
+      const res = await fetch(`${API_URL}/api/recommendations/`);
       const data = await res.json();
       setRecommendations(data);
     } catch (e) {
