@@ -1,4 +1,4 @@
-export default function CategoryGrid() {
+export default function CategoryGrid({ onCategoryClick }: { onCategoryClick?: (category: string) => void }) {
   const categories = [
     { name: "Dairy", items: "12 items", icon: "🥛" },
     { name: "Bakery", items: "8 items", icon: "🍞" },
@@ -19,7 +19,11 @@ export default function CategoryGrid() {
       
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
         {categories.map((cat, idx) => (
-          <div key={idx} className="glass-card p-4 flex flex-col items-center justify-center text-center cursor-pointer group hover:bg-white/10 transition-all border border-white/5 hover:border-purple-500/30 rounded-2xl">
+          <div 
+            key={idx} 
+            onClick={() => onCategoryClick && onCategoryClick(cat.name)}
+            className="glass-card p-4 flex flex-col items-center justify-center text-center cursor-pointer group hover:bg-white/10 transition-all border border-white/5 hover:border-purple-500/30 rounded-2xl"
+          >
             <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300 filter drop-shadow-md">
               {cat.icon}
             </div>

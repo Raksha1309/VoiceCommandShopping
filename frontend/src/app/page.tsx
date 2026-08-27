@@ -165,7 +165,7 @@ export default function Home() {
         
         <div className="flex-1">
           <HeroSection onCommand={handleCommand} onToggleVoice={toggleListen} />
-          <CategoryGrid />
+          <CategoryGrid onCategoryClick={(category) => handleCommand(`Show me ${category} products`)} />
           <ProductGrid onAdd={manualAdd} />
           <FeaturesBanner />
         </div>
