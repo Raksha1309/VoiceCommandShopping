@@ -51,3 +51,22 @@ def delete_item(item_id: int, db: Session = Depends(get_db)):
         db.commit()
         return {"message": "Deleted"}
     return {"message": "Not found"}
+
+from pydantic import BaseModel
+
+class UpdateQuantityRequest(BaseModel):
+    quantity: int
+
+@router.put("/{item_id}")
+def update_item_quantity(item_id: int, req: UpdateQuantityRequest, db: Session = Depends(get_db)):
+    item = db.query(ShoppingItem).filter(ShoppingItem.id == item_id).first()
+    if item:
+        if req.quantity <= 0:
+            db.delete(item)
+            db.commit()
+            return {"message": "Deleted"}
+        else:
+            item.quantity = req.quantity
+            db.commit()
+            return {"message": "Updated"}
+    return {"message": "Not found"}

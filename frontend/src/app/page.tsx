@@ -172,6 +172,19 @@ export default function Home() {
     }
   };
 
+  const handleUpdateQuantity = async (id: number, quantity: number) => {
+    try {
+      await fetch(`${API_URL}/api/shopping/${id}`, { 
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ quantity })
+      });
+      fetchList();
+    } catch (e) {
+      console.error("Failed to update quantity", e);
+    }
+  };
+
   const manualAdd = (productName: string) => {
     handleCommand(`Add ${productName}`);
   };
@@ -203,7 +216,8 @@ export default function Home() {
       {/* Right Sidebar (Cart & Voice) */}
       <RightSidebar 
         items={items} 
-        onRemove={handleRemove} 
+        onRemove={handleRemove}
+        onUpdateQuantity={handleUpdateQuantity}
         onCheckout={() => setSystemMessage("Checkout coming soon!")}
         isListening={isListening}
         onToggleVoice={toggleListen}

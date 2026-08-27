@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Heart, Star, ShoppingCart } from "lucide-react";
 
 interface Product {
@@ -23,6 +24,18 @@ export default function ProductGrid({
   title?: string,
   onAdd: (name: string) => void 
 }) {
+  const [favorites, setFavorites] = useState<Set<number>>(new Set());
+
+  const toggleFav = (id: number) => {
+    const newFavs = new Set(favorites);
+    if (newFavs.has(id)) {
+      newFavs.delete(id);
+    } else {
+      newFavs.add(id);
+    }
+    setFavorites(newFavs);
+  };
+
   return (
     <div className="px-6 mt-10 mb-8">
       <div className="flex items-center justify-between mb-4">
@@ -39,8 +52,8 @@ export default function ProductGrid({
               <div className="text-5xl my-4 mx-auto filter drop-shadow-lg group-hover:scale-110 transition-transform duration-300">
                 {product.image || "🛒"}
               </div>
-              <button className="text-text-muted hover:text-pink-500 transition-colors">
-                <Heart className={`w-5 h-5 ${product.isFav ? 'fill-pink-500 text-pink-500' : ''}`} />
+              <button onClick={() => toggleFav(product.id)} className="text-text-muted hover:text-pink-500 transition-colors">
+                <Heart className={`w-5 h-5 ${favorites.has(product.id) ? 'fill-pink-500 text-pink-500' : ''}`} />
               </button>
             </div>
             

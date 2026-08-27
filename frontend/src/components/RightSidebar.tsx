@@ -12,12 +12,14 @@ interface CartItem {
 export default function RightSidebar({ 
   items, 
   onRemove,
+  onUpdateQuantity,
   onCheckout,
   isListening,
   onToggleVoice
 }: { 
   items: CartItem[], 
   onRemove: (id: number) => void,
+  onUpdateQuantity: (id: number, quantity: number) => void,
   onCheckout: () => void,
   isListening: boolean,
   onToggleVoice: () => void
@@ -63,9 +65,9 @@ export default function RightSidebar({
                   <p className="text-xs text-text-muted mb-2">{item.weight}</p>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 bg-black/20 rounded-lg p-0.5 border border-white/10">
-                      <button className="p-1 text-text-muted hover:text-white"><Minus className="w-3 h-3" /></button>
+                      <button onClick={() => onUpdateQuantity(item.id, item.quantity - 1)} className="p-1 text-text-muted hover:text-white"><Minus className="w-3 h-3" /></button>
                       <span className="text-xs font-medium text-white w-4 text-center">{item.quantity}</span>
-                      <button className="p-1 text-text-muted hover:text-white"><Plus className="w-3 h-3" /></button>
+                      <button onClick={() => onUpdateQuantity(item.id, item.quantity + 1)} className="p-1 text-text-muted hover:text-white"><Plus className="w-3 h-3" /></button>
                     </div>
                     <span className="text-sm font-bold text-white">₹{(item.price * item.quantity).toFixed(2)}</span>
                   </div>
