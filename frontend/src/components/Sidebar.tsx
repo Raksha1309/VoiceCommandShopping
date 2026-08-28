@@ -28,23 +28,26 @@ export default function Sidebar({
       </div>
 
       <nav className="flex-1 px-4 py-2 space-y-1">
-        {navItems.map((item, idx) => (
-          <button 
-            key={idx} 
-            onClick={() => onNavClick && onNavClick(item.label)}
-            className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all ${item.active ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white' : 'text-text-muted hover:text-white hover:bg-white/5'}`}
-          >
-            <div className="flex items-center gap-3">
-              <item.icon className={`w-5 h-5 ${item.active ? 'text-indigo-400' : ''}`} />
-              <span className="font-medium text-sm">{item.label}</span>
-            </div>
-            {item.badge > 0 && (
-              <span className="bg-indigo-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
-                {item.badge}
-              </span>
-            )}
-          </button>
-        ))}
+        {navItems.map((item, idx) => {
+          const badge = item.badge ?? 0;
+          return (
+            <button 
+              key={idx} 
+              onClick={() => onNavClick && onNavClick(item.label)}
+              className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all ${item.active ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white' : 'text-text-muted hover:text-white hover:bg-white/5'}`}
+            >
+              <div className="flex items-center gap-3">
+                <item.icon className={`w-5 h-5 ${item.active ? 'text-indigo-400' : ''}`} />
+                <span className="font-medium text-sm">{item.label}</span>
+              </div>
+              {badge > 0 && (
+                <span className="bg-indigo-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
+                  {badge}
+                </span>
+              )}
+            </button>
+          );
+        })}
       </nav>
 
       <div className="p-4 mt-auto">
