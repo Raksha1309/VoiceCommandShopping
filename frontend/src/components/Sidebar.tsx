@@ -1,11 +1,16 @@
 import { Home, Search, ShoppingCart, LayoutGrid, Sparkles, Package, User, Settings, Moon } from "lucide-react";
-import Link from "next/link";
 
-export default function Sidebar() {
+export default function Sidebar({
+  cartItemCount,
+  onNavClick
+}: {
+  cartItemCount?: number;
+  onNavClick?: (label: string) => void;
+}) {
   const navItems = [
     { icon: Home, label: "Home", active: true },
     { icon: Search, label: "Search" },
-    { icon: ShoppingCart, label: "My Cart", badge: 3 },
+    { icon: ShoppingCart, label: "My Cart", badge: cartItemCount || 0 },
     { icon: LayoutGrid, label: "Categories" },
     { icon: Sparkles, label: "Recommendations" },
     { icon: Package, label: "My Orders" },
@@ -24,17 +29,21 @@ export default function Sidebar() {
 
       <nav className="flex-1 px-4 py-2 space-y-1">
         {navItems.map((item, idx) => (
-          <Link href="#" key={idx} className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${item.active ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white' : 'text-text-muted hover:text-white hover:bg-white/5'}`}>
+          <button 
+            key={idx} 
+            onClick={() => onNavClick && onNavClick(item.label)}
+            className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all ${item.active ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white' : 'text-text-muted hover:text-white hover:bg-white/5'}`}
+          >
             <div className="flex items-center gap-3">
               <item.icon className={`w-5 h-5 ${item.active ? 'text-indigo-400' : ''}`} />
               <span className="font-medium text-sm">{item.label}</span>
             </div>
-            {item.badge && (
+            {item.badge > 0 && (
               <span className="bg-indigo-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
                 {item.badge}
               </span>
             )}
-          </Link>
+          </button>
         ))}
       </nav>
 

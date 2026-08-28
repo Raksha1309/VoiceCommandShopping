@@ -185,14 +185,38 @@ export default function Home() {
     }
   };
 
+  const handleSidebarNav = (label: string) => {
+    switch(label) {
+      case "Home":
+        setProducts(products); // Reset or keep current
+        setSystemMessage("Welcome Home!");
+        break;
+      case "Search":
+        // Just show message, real search is in TopHeader
+        setSystemMessage("Use the search bar at the top or voice commands!");
+        break;
+      case "My Cart":
+        setSystemMessage("Your cart is open on the right.");
+        break;
+      case "Categories":
+        setSystemMessage("Scroll down to see categories.");
+        break;
+      default:
+        setSystemMessage(`${label} coming soon!`);
+    }
+    setTimeout(() => setSystemMessage(""), 3000);
+  };
+
   const manualAdd = (productName: string) => {
     handleCommand(`Add ${productName}`);
   };
 
+  const cartItemCount = items.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <div className="flex h-screen overflow-hidden bg-background">
       {/* Left Sidebar */}
-      <Sidebar />
+      <Sidebar cartItemCount={cartItemCount} onNavClick={handleSidebarNav} />
 
       {/* Main Content Area */}
       <main className="flex-1 flex flex-col relative overflow-y-auto custom-scrollbar">
