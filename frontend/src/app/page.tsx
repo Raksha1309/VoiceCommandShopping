@@ -25,6 +25,7 @@ export default function Home() {
     { id: 105, name: "Aashirvaad Atta", weight: "5 kg", price: 249.00, rating: 4.9, image: "🌾", isFav: false },
   ]);
   const [productsTitle, setProductsTitle] = useState("Popular Products");
+  const [activeSection, setActiveSection] = useState("Home");
 
   const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
@@ -186,23 +187,23 @@ export default function Home() {
   };
 
   const handleSidebarNav = (label: string) => {
+    setActiveSection(label);
     switch(label) {
       case "Home":
-        setProducts(products); // Reset or keep current
+        document.getElementById("main-scroll-area")?.scrollTo({ top: 0, behavior: "smooth" });
         setSystemMessage("Welcome Home!");
         break;
       case "Search":
-        // Just show message, real search is in TopHeader
-        setSystemMessage("Use the search bar at the top or voice commands!");
+        document.getElementById("search-section")?.scrollIntoView({ behavior: "smooth", block: "center" });
         break;
       case "My Cart":
         setSystemMessage("Your cart is open on the right.");
         break;
       case "Categories":
-        setSystemMessage("Scroll down to see categories.");
+        document.getElementById("categories-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
         break;
       default:
-        setSystemMessage(`${label} coming soon!`);
+        setSystemMessage(`${label} section coming soon!`);
     }
     setTimeout(() => setSystemMessage(""), 3000);
   };
@@ -216,10 +217,10 @@ export default function Home() {
   return (
     <div className="flex h-screen overflow-hidden bg-background">
       {/* Left Sidebar */}
-      <Sidebar cartItemCount={cartItemCount} onNavClick={handleSidebarNav} />
+      <Sidebar cartItemCount={cartItemCount} onNavClick={handleSidebarNav} activeItem={activeSection} />
 
       {/* Main Content Area */}
-      <main className="flex-1 flex flex-col relative overflow-y-auto custom-scrollbar">
+      <main id="main-scroll-area" className="flex-1 flex flex-col relative overflow-y-auto custom-scrollbar">
         {/* System Message Overlay */}
         {systemMessage && (
           <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 glass-panel border-purple-500/50 text-white text-sm py-2 px-6 rounded-full shadow-lg shadow-purple-500/20 animate-in slide-in-from-top-4 fade-in duration-300">
@@ -227,11 +228,15 @@ export default function Home() {
           </div>
         )}
 
-        <TopHeader onToggleVoice={toggleListen} onSearch={searchProducts} />
+        <div id="search-section">
+          <TopHeader onToggleVoice={toggleListen} onSearch={searchProducts} />
+        </div>
         
         <div className="flex-1">
           <HeroSection onCommand={handleCommand} onToggleVoice={toggleListen} />
-          <CategoryGrid onCategoryClick={(category) => searchProducts(category)} />
+          <div id="categories-section">
+            <CategoryGrid onCategoryClick={(category) => searchProducts(category)} />
+          </div>
           <ProductGrid products={products} title={productsTitle} onAdd={manualAdd} />
           <FeaturesBanner />
         </div>

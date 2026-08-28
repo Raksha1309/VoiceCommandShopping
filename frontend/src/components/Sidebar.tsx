@@ -2,20 +2,22 @@ import { Home, Search, ShoppingCart, LayoutGrid, Sparkles, Package, User, Settin
 
 export default function Sidebar({
   cartItemCount,
-  onNavClick
+  onNavClick,
+  activeItem = "Home"
 }: {
   cartItemCount?: number;
   onNavClick?: (label: string) => void;
+  activeItem?: string;
 }) {
   const navItems = [
-    { icon: Home, label: "Home", active: true },
-    { icon: Search, label: "Search" },
-    { icon: ShoppingCart, label: "My Cart", badge: cartItemCount || 0 },
-    { icon: LayoutGrid, label: "Categories" },
-    { icon: Sparkles, label: "Recommendations" },
-    { icon: Package, label: "My Orders" },
-    { icon: User, label: "Profile" },
-    { icon: Settings, label: "Settings" },
+    { icon: Home, label: "Home", active: activeItem === "Home" },
+    { icon: Search, label: "Search", active: activeItem === "Search" },
+    { icon: ShoppingCart, label: "My Cart", badge: cartItemCount || 0, active: activeItem === "My Cart" },
+    { icon: LayoutGrid, label: "Categories", active: activeItem === "Categories" },
+    { icon: Sparkles, label: "Recommendations", active: activeItem === "Recommendations" },
+    { icon: Package, label: "My Orders", active: activeItem === "My Orders" },
+    { icon: User, label: "Profile", active: activeItem === "Profile" },
+    { icon: Settings, label: "Settings", active: activeItem === "Settings" },
   ];
 
   return (
