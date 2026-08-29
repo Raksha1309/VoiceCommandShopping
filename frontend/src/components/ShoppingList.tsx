@@ -58,7 +58,9 @@ export default function ShoppingList({ items, onRemove, onUpdateQuantity, onChec
                       <Plus className="w-4 h-4" />
                     </button>
                   </div>
-                  <span className="text-lg font-bold text-white w-20 text-right">₹{(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="text-lg font-bold text-white w-24 text-right">
+                    {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(item.price * item.quantity)}
+                  </span>
                   <button onClick={() => onRemove(item.id)} className="text-text-muted hover:text-red-400 transition-colors p-2 rounded-lg hover:bg-red-400/10 opacity-0 group-hover:opacity-100 focus:opacity-100">
                     <Trash2 className="w-5 h-5" />
                   </button>
@@ -74,16 +76,20 @@ export default function ShoppingList({ items, onRemove, onUpdateQuantity, onChec
               <div className="space-y-4 mb-6">
                 <div className="flex justify-between text-text-muted">
                   <span>Subtotal ({totalItems} items)</span>
-                  <span className="text-white">₹{total.toFixed(2)}</span>
+                  <span className="text-white">
+                    {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(total)}
+                  </span>
                 </div>
                 <div className="flex justify-between text-text-muted">
                   <span>Delivery Fee</span>
-                  <span className="text-white">₹40.00</span>
+                  <span className="text-white">
+                    {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(40)}
+                  </span>
                 </div>
                 <div className="border-t border-white/10 pt-4 mt-4 flex justify-between items-center">
                   <span className="text-white font-medium text-lg">Total</span>
                   <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-primary">
-                    ₹{(total + 40).toFixed(2)}
+                    {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(total + 40)}
                   </span>
                 </div>
               </div>

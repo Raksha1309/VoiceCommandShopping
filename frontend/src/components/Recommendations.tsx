@@ -21,17 +21,32 @@ export default function Recommendations({
         if (!res.ok) throw new Error("Failed to load recommendations");
         const data = await res.json();
         
-        // Add fake properties if backend doesn't provide them
-        const processed = data.recommendations.map((name: string, i: number) => ({
-          id: 500 + i,
-          name: name,
-          price: 30 + (i * 10),
-          weight: "1 unit",
-          rating: 4.5 + (Math.random() * 0.5),
-          image: "⭐"
-        }));
+        let allRecs: any[] = [];
         
-        setRecommendations(processed);
+        const processGroup = (group: any[], typeLabel: string) => {
+          if (!group) return;
+          group.forEach((item: any, i: number) => {
+            allRecs.push({
+              id: Math.random() * 10000,
+              name: item.name,
+              price: 30 + (Math.random() * 50),
+              weight: "1 unit",
+              rating: 4.5 + (Math.random() * 0.5),
+              image: typeLabel === 'sale' ? "🏷️" : typeLabel === 'seasonal' ? "🍁" : "⭐",
+              message: item.message
+            });
+          });
+        };
+
+        processGroup(data.history, 'history');
+        processGroup(data.seasonal, 'seasonal');
+        processGroup(data.on_sale, 'sale');
+        processGroup(data.substitutes, 'sub');
+
+        // Deduplicate by name
+        const uniqueRecs = allRecs.filter((v, i, a) => a.findIndex(t => (t.name === v.name)) === i);
+        
+        setRecommendations(uniqueRecs);
       } catch (err) {
         setError("Unable to load recommendations at this time.");
       } finally {

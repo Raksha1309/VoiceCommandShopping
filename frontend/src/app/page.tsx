@@ -4,13 +4,16 @@ import { useState, useEffect, useRef } from "react";
 import Sidebar from "@/components/Sidebar";
 import TopHeader from "@/components/TopHeader";
 import HeroSection from "@/components/HeroSection";
-import CategoryGrid from "@/components/CategoryGrid";
 import ProductGrid from "@/components/ProductGrid";
 import FeaturesBanner from "@/components/FeaturesBanner";
 import VoiceButton from "@/components/VoiceButton";
 import ShoppingList from "@/components/ShoppingList";
 import Recommendations from "@/components/Recommendations";
 import SearchTab from "@/components/SearchTab";
+import MyOrders from "@/components/MyOrders";
+import Profile from "@/components/Profile";
+import Settings from "@/components/Settings";
+import CategoriesTab from "@/components/CategoriesTab";
 
 export default function Home() {
   const [items, setItems] = useState<any[]>([]);
@@ -221,12 +224,6 @@ export default function Home() {
                 searchProducts(q);
               }} />
               <HeroSection onCommand={handleCommand} onToggleVoice={toggleListen} />
-              <div id="categories-section">
-                <CategoryGrid onCategoryClick={(category) => {
-                  setActiveSection("Search");
-                  searchProducts(category);
-                }} />
-              </div>
               <ProductGrid products={products} title={productsTitle} onAdd={manualAdd} />
               <FeaturesBanner />
             </div>
@@ -249,7 +246,23 @@ export default function Home() {
               onRemove={handleRemove}
               onUpdateQuantity={handleUpdateQuantity}
               onCheckout={() => {
-                setSystemMessage("Checkout coming soon!");
+                // Generate simple order
+                const newOrder = {
+                  id: `VC${Math.floor(1000 + Math.random() * 9000)}`,
+                  date: new Date().toISOString(),
+                  status: "Processing",
+                  total: items.reduce((acc, item) => acc + (item.price * item.quantity), 0) + 40,
+                  items: [...items]
+                };
+                
+                const existing = localStorage.getItem("voicecart_orders");
+                const parsed = existing ? JSON.parse(existing) : [];
+                localStorage.setItem("voicecart_orders", JSON.stringify([newOrder, ...parsed]));
+                
+                // Clear cart (frontend & backend)
+                handleCommand("Clear my cart");
+                setSystemMessage("Order placed successfully! Check My Orders.");
+                setActiveSection("My Orders");
                 setTimeout(() => setSystemMessage(""), 3000);
               }}
             />
@@ -259,15 +272,20 @@ export default function Home() {
             <Recommendations onAdd={manualAdd} />
           )}
 
-          {["My Orders", "Profile", "Settings"].includes(activeSection) && (
-            <div className="flex flex-col items-center justify-center h-full py-32 text-text-muted animate-in fade-in duration-500">
-              <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-6 text-4xl">🚧</div>
-              <p className="text-white font-medium text-xl">{activeSection} is coming soon!</p>
-              <p className="text-sm mt-2">We're working hard to bring this feature to you.</p>
-              <button onClick={() => setActiveSection("Home")} className="mt-8 px-6 py-2 bg-gradient-primary hover:scale-105 transition-transform text-white rounded-lg shadow-lg shadow-purple-500/25">
-                Back to Home
-              </button>
-            </div>
+          {activeSection === "Categories" && (
+            <CategoriesTab onAdd={manualAdd} />
+          )}
+
+          {activeSection === "My Orders" && (
+            <MyOrders />
+          )}
+
+          {activeSection === "Profile" && (
+            <Profile />
+          )}
+
+          {activeSection === "Settings" && (
+            <Settings />
           )}
         </div>
       </main>

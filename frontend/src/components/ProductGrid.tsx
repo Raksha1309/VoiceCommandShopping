@@ -65,11 +65,13 @@ export default function ProductGrid({
               <span className="font-medium text-white">{product.rating || 4.5}</span>
             </div>
             
-            <div className="mt-auto flex items-center justify-between">
-              <span className="text-white font-bold text-lg">₹{product.price?.toFixed(2)}</span>
+            <div className="flex justify-between items-center mt-3">
+              <span className="text-xl font-bold text-white">
+                {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(product.price)}
+              </span>
               <button 
                 onClick={() => onAdd(product.name)}
-                className="bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 transition-colors"
+                className="bg-white/10 hover:bg-white/20 text-white p-2.5 rounded-xl transition-all hover:scale-105 active:scale-95"
               >
                 <ShoppingCart className="w-3.5 h-3.5" />
                 Add
