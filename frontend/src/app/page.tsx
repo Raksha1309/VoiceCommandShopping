@@ -6,8 +6,11 @@ import TopHeader from "@/components/TopHeader";
 import HeroSection from "@/components/HeroSection";
 import CategoryGrid from "@/components/CategoryGrid";
 import ProductGrid from "@/components/ProductGrid";
-import RightSidebar from "@/components/RightSidebar";
 import FeaturesBanner from "@/components/FeaturesBanner";
+import VoiceButton from "@/components/VoiceButton";
+import ShoppingList from "@/components/ShoppingList";
+import Recommendations from "@/components/Recommendations";
+import SearchTab from "@/components/SearchTab";
 
 export default function Home() {
   const [items, setItems] = useState<any[]>([]);
@@ -188,24 +191,6 @@ export default function Home() {
 
   const handleSidebarNav = (label: string) => {
     setActiveSection(label);
-    switch(label) {
-      case "Home":
-        document.getElementById("main-scroll-area")?.scrollTo({ top: 0, behavior: "smooth" });
-        setSystemMessage("Welcome Home!");
-        break;
-      case "Search":
-        document.getElementById("search-section")?.scrollIntoView({ behavior: "smooth", block: "center" });
-        break;
-      case "My Cart":
-        setSystemMessage("Your cart is open on the right.");
-        break;
-      case "Categories":
-        document.getElementById("categories-section")?.scrollIntoView({ behavior: "smooth", block: "start" });
-        break;
-      default:
-        setSystemMessage(`${label} section coming soon!`);
-    }
-    setTimeout(() => setSystemMessage(""), 3000);
   };
 
   const manualAdd = (productName: string) => {
@@ -228,29 +213,68 @@ export default function Home() {
           </div>
         )}
 
-        <div id="search-section">
-          <TopHeader onToggleVoice={toggleListen} onSearch={searchProducts} />
-        </div>
-        
-        <div className="flex-1">
-          <HeroSection onCommand={handleCommand} onToggleVoice={toggleListen} />
-          <div id="categories-section">
-            <CategoryGrid onCategoryClick={(category) => searchProducts(category)} />
-          </div>
-          <ProductGrid products={products} title={productsTitle} onAdd={manualAdd} />
-          <FeaturesBanner />
+        <div className="flex-1 pb-24">
+          {activeSection === "Home" && (
+            <div className="animate-in fade-in duration-500">
+              <TopHeader onToggleVoice={toggleListen} onSearch={(q) => {
+                setActiveSection("Search");
+                searchProducts(q);
+              }} />
+              <HeroSection onCommand={handleCommand} onToggleVoice={toggleListen} />
+              <div id="categories-section">
+                <CategoryGrid onCategoryClick={(category) => {
+                  setActiveSection("Search");
+                  searchProducts(category);
+                }} />
+              </div>
+              <ProductGrid products={products} title={productsTitle} onAdd={manualAdd} />
+              <FeaturesBanner />
+            </div>
+          )}
+
+          {activeSection === "Search" && (
+            <SearchTab 
+              onToggleVoice={toggleListen}
+              onSearch={searchProducts}
+              products={products}
+              title={productsTitle}
+              onAdd={manualAdd}
+              isSearching={false} // Would need a new state for true loading, but keeping simple for now
+            />
+          )}
+
+          {activeSection === "My Cart" && (
+            <ShoppingList 
+              items={items}
+              onRemove={handleRemove}
+              onUpdateQuantity={handleUpdateQuantity}
+              onCheckout={() => {
+                setSystemMessage("Checkout coming soon!");
+                setTimeout(() => setSystemMessage(""), 3000);
+              }}
+            />
+          )}
+
+          {activeSection === "Recommendations" && (
+            <Recommendations onAdd={manualAdd} />
+          )}
+
+          {["My Orders", "Profile", "Settings"].includes(activeSection) && (
+            <div className="flex flex-col items-center justify-center h-full py-32 text-text-muted animate-in fade-in duration-500">
+              <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-6 text-4xl">🚧</div>
+              <p className="text-white font-medium text-xl">{activeSection} is coming soon!</p>
+              <p className="text-sm mt-2">We're working hard to bring this feature to you.</p>
+              <button onClick={() => setActiveSection("Home")} className="mt-8 px-6 py-2 bg-gradient-primary hover:scale-105 transition-transform text-white rounded-lg shadow-lg shadow-purple-500/25">
+                Back to Home
+              </button>
+            </div>
+          )}
         </div>
       </main>
 
-      {/* Right Sidebar (Cart & Voice) */}
-      <RightSidebar 
-        items={items} 
-        onRemove={handleRemove}
-        onUpdateQuantity={handleUpdateQuantity}
-        onCheckout={() => setSystemMessage("Checkout coming soon!")}
-        isListening={isListening}
-        onToggleVoice={toggleListen}
-      />
+      {/* Global Voice Button */}
+      <VoiceButton isListening={isListening} onToggleVoice={toggleListen} />
     </div>
   );
 }
+
